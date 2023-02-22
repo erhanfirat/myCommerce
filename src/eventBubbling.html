@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 2rem;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>
+        <button>Click Here</button>
+      </span>
+    </div>
+    <script>
+      document
+        .getElementsByTagName("body")[0]
+        .addEventListener("click", (e) => {
+          console.log("body clicked!");
+        });
+      document
+        .getElementsByTagName("span")[0]
+        .addEventListener("click", (e) => {
+          console.log("span clicked!");
+        });
+
+      document
+        .getElementsByTagName("button")[0]
+        .addEventListener("click", (e) => {
+          console.log("button clicked!");
+        });
+
+      document.getElementsByTagName("div")[0].addEventListener("click", (e) => {
+        console.log("div clicked!");
+      });
+    </script>
+  </body>
+</html>

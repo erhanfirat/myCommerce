@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./../assets/style/reset.css" />
+    <link rel="stylesheet" href="./../assets/style/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/138cb01425.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./scripts/icon-button/icon-button.css" />
+    <script src="./scripts/icon-button/icon-button.js"></script>
+
+    <link rel="stylesheet" href="./scripts/product-item/product-item.css" />
+    <script src="./scripts/product-item/product-item.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="flex-container">
+        <img
+          class="logo"
+          src="https://app.workintech.com.tr/img/logo-dark.06ee78a5.svg"
+        />
+        <a class="flex-item" href="#"> Home </a>
+        <a id="about-link" class="flex-item" href="yeni-sayfa-urli"> About </a>
+        <a class="flex-item" href="#"> Blog </a>
+        <a id="myPage" class="flex-item user-link ücüncü-class" href="#">
+          My Page
+        </a>
+      </nav>
+      <div class="content-container">
+        <div
+          id="user-info-panel"
+          class="user-info vertical-center"
+          style="height: 120px"
+        >
+          <i class="fa-solid fa-user"></i>
+          <div class="user-greeting"></div>
+          (<span id="shopping-cart">0</span>)
+        </div>
+        <section
+          id="products-container-section"
+          class="products-container"
+        ></section>
+      </div>
+    </div>
+    <script type="text/javascript" src="./scripts/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+button.icon-button {
+  background: #2086c9;
+  color: #fff;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #1877b6;
+  cursor: pointer;
+}
+button.icon-button:hover {
+  background: #2f93d5;
+}
+button.icon-button:active {
+  background: #156aa3;
+}
+button.icon-button:disabled,
+button.icon-button[disabled] {
+  background: #c7c7c7;
+  color: #919191;
+  border-color: #b6b6b6;
+}

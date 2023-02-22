@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Prevent Default</title>
+    <style>
+      input {
+        background: white;
+        border: 5px solid #ccc;
+      }
+      input:focus {
+        border: 5px solid #f123ce;
+        background: #f123ce;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="subscribe-form" action="/form-submit-url">
+      <label for="f-name">Your name:</label>
+      <input
+        id="f-name"
+        name="user-name"
+        type="text"
+        value=""
+        placeholder="Your name"
+      />
+      <br />
+      <label for="f-email">Your email:</label>
+      <input
+        id="f-email"
+        name="user-email"
+        type="text"
+        value=""
+        placeholder="Your email"
+      />
+      <br />
+      <label for="f-ok">Are you ok?</label>
+      <input
+        id="f-ok"
+        name="user-state"
+        type="checkbox"
+        value=""
+        placeholder="Your email"
+      />
+      <br /><br />
+      <input id="input-submit" type="submit" value="Submit" />
+    </form>
+    <script>
+      //   document.getElementById("input-submit").addEventListener("click", (e) => {
+      //     e.preventDefault();
+      //     // Do AJAX Req, to send data to server
+
+      //   });
+
+      document
+        .getElementById("subscribe-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+        });
+
+      //   document.getElementById("input-submit").addEventListener("click", (e) => {
+      //     e.preventDefault();
+      //   });
+    </script>
+  </body>
+</html>
