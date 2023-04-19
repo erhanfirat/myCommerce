@@ -106,6 +106,7 @@ if (!user) {
 //     imgURL: "https://picsum.photos/200/240?random=12",
 //   },
 // ];
+let shoppingCart = [];
 
 const appendProductsIntoContainer = (products) => {
   const productsContainer = document.getElementById(
@@ -121,6 +122,21 @@ const appendProductsIntoContainer = (products) => {
 
     productsContainer.append(productItem);
   }
+
+  const productButtons = document.querySelectorAll(
+    ".product-item > button.sepete-ekle"
+  );
+
+  for (const btn of productButtons) {
+    btn.addEventListener("click", (e) => {
+      debugger;
+      e.stopPropagation();
+      shoppingCart.push(e.target.parentElement.children[1].textContent);
+      document.getElementById("shopping-cart").textContent =
+        shoppingCart.length;
+      e.target.disabled = true;
+    });
+  }
 };
 
 const productCards = document.querySelectorAll(".product-item");
@@ -129,19 +145,6 @@ for (const productCard of productCards) {
   productCard.addEventListener("click", (e) => {
     window.location =
       "file:///C:/Projects/WorkInTech/Sprint%205/myCommerce/src/productDetail.html";
-  });
-}
-
-const productButtons = document.querySelectorAll(".product-item > button");
-
-let shoppingCart = [];
-
-for (const btn of productButtons) {
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    shoppingCart.push(e.target.parentElement.children[1].textContent);
-    document.getElementById("shopping-cart").textContent = shoppingCart.length;
-    e.target.disabled = true;
   });
 }
 
@@ -211,3 +214,34 @@ axios
 //   description: "Bu productı axios post requesti ile oluşturdum!",
 //   img: "https://picsum.photos/200/240?random=123123",
 // });
+
+const strongDOM = document.querySelector("strong");
+
+setTimeout(() => {
+  if (strongDOM) {
+    strongDOM.textContent = "Emrah";
+    strongDOM.setAttribute("title", "Kullanıcı adı");
+    strongDOM.style.color = "red";
+    strongDOM.style.padding = "3rem";
+    strongDOM.style.border = "1px solid black";
+    strongDOM.className = "highlight shadow";
+
+    // strongDOM.setAttribute("id", "strong-dom-for-user-name");
+    strongDOM.id = "strong-dom-for-user-name";
+  }
+}, 2000);
+
+setTimeout(() => {
+  if (strongDOM) {
+    strongDOM.removeAttribute("title");
+    strongDOM.className = strongDOM.className + " bg-blue";
+  }
+}, 10000);
+
+const newLiItem = document.createElement("li");
+newLiItem.textContent = "Contact";
+newLiItem.classList.add("highlight");
+
+const list = document.getElementById("bookmark-list");
+//list.appendChild(newLiItem);
+list.prepend(newLiItem);

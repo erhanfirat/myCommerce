@@ -33,10 +33,20 @@ const generateProductItem = (imgURL, header, description) => {
   pItem.textContent = description;
   productItem.append(pItem);
 
-  const addButton = generateIconButton("cart-plus", "Sepete Ekle", () => {});
+  const addButton = generateIconButton(
+    "cart-plus",
+    "Sepete Ekle",
+    () => {},
+    "sepete-ekle"
+  );
   productItem.append(addButton);
 
-  const favButton = generateIconButton("star", "Favorilere Ekle", () => {});
+  const favButton = generateIconButton(
+    "star",
+    "Favorilere Ekle",
+    () => {},
+    "fav-ekle"
+  );
   productItem.append(favButton);
 
   return productItem;

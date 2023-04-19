@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span id="mouse-position"></span>
+    <a href="https://duckduckgo.com">Ara</a>
+
+    <form action="/form-submit">
+      <label for="fname">Your name:</label><br />
+      <input type="text" id="fname" name="name" value="" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <span id="mouse-event" style="display: block; font-size: 24px"></span>
+
+    <script>
+      document
+        .getElementsByTagName("a")[0]
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          // logic implemented!
+
+          window.location = "https://duckduckgo.com";
+        });
+
+      window.addEventListener("mousemove", (e) => {
+        document.getElementById(
+          "mouse-position"
+        ).textContent = `${e.screenX} x ${e.screenY}`;
+      });
+
+      window.addEventListener("mousedown", (e) => {
+        document.getElementById("mouse-event").textContent = `MOUSE DOWN`;
+      });
+
+      window.addEventListener("mouseup", (e) => {
+        document.getElementById("mouse-event").textContent = `MOUSE UP`;
+      });
+
+      document
+        .getElementsByTagName("form")[0]
+        .addEventListener("mouseenter", (e) => {
+          document.getElementById("mouse-event").textContent = `MOUSE ENTER`;
+        });
+
+      document
+        .getElementsByTagName("form")[0]
+        .addEventListener("mouseleave", (e) => {
+          document.getElementById("mouse-event").textContent = `MOUSE LEAVE`;
+        });
+
+      window.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        console.log("event > ", e);
+      });
+
+      document
+        .getElementsByTagName("form")[0]
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+        });
+    </script>
+  </body>
+</html>
