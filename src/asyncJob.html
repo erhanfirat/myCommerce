@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <script>
+      const sıfırdanYüzeKadarRastgeleÇiftSayıBul = () => {
+        return new Promise((resolve, reject) => {
+          console.log("düşünüyoruummm…");
+          setTimeout(() => {
+            const sayi = Math.floor(Math.random() * 100);
+            if (sayi % 2 === 0) {
+              resolve(sayi);
+            } else {
+              reject(sayi);
+            }
+          }, 3000);
+        });
+      };
+
+      //   const sayiPromise = sıfırdanYüzeKadarRastgeleÇiftSayıBul();
+
+      //   sayiPromise
+      //     .then((sayi) => {
+      //       console.log("Çift Sayi > ", sayi);
+      //     })
+      //     .catch((sayi) => {
+      //       console.error("Ama bu çift değil! > ", sayi);
+      //     })
+      //     .finally(() => {
+      //       console.log("her halükarda teşekkür ederim...");
+      //     });
+
+      const productsPromise = axios.get(
+        "https://620d69fb20ac3a4eedc05e3a.mockapi.io/api/products"
+      );
+
+      productsPromise.then((response) => {
+        // response
+        // console.log("axios res > ", response);
+        console.log("producst > ", response.data);
+      });
+      // .catch((err) => {})
+      // .finally(() => {});
+    </script>
+  </head>
+  <body></body>
+</html>
